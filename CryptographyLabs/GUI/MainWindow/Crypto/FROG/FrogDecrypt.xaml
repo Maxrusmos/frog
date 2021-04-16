@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI">
+    <DataTemplate DataType="{x:Type gui:FrogDecryptVM}">
+        <Grid Margin="0 6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="File to decrypt:"
+                       VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Text="{Binding FilePath}"/>
+            <Button Grid.Column="2" Content="..."
+                    Padding="6 0"
+                    Command="{Binding ChangeFilePathCmd}"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

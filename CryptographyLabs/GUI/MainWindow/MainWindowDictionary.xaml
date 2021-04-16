@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI"
+                    xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase">
+    <CollectionViewSource x:Key="SortedCryptoProgressVM" Source="{Binding ProgressViewModels}">
+        <CollectionViewSource.SortDescriptions>
+            <scm:SortDescription PropertyName="StartTime" Direction="Descending"/>
+        </CollectionViewSource.SortDescriptions>
+    </CollectionViewSource>
+
+    <Grid x:Key="vernam_key1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Text="Key filename: "/>
+        <TextBox Grid.Column="1" Text="{Binding VernamVM.KeyFilename, Mode=TwoWay}"/>
+        <Button Grid.Column="2" Content="..." Width="30"
+                Command="{Binding VernamVM.ChangeKeyFilenameCommand}"/>
+    </Grid>
+    <TextBlock Text="Key will be generated automatically" x:Key="vernam_key2"/>
+</ResourceDictionary>

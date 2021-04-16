@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI">
+    <DataTemplate DataType="{x:Type gui:Task2_5VM}">
+        <StackPanel Margin="0 0 0 10" Orientation="Vertical">
+            <TextBlock>
+                <TextBlock.Inlines>
+                    <Run FontWeight="Bold" Text="Task5. "/>
+                    <Run Text="Fast exponentiation modulo m."/>
+                </TextBlock.Inlines>
+            </TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="value = "/>
+                <TextBox Grid.Column="1" MinWidth="120px" HorizontalAlignment="Left"
+                         Text="{Binding ValueStr}"/>
+                <TextBlock Grid.Column="2" Margin="12 0 0 0" Text="power = "/>
+                <TextBox Grid.Column="3" 
+                         Text="{Binding PowerStr}"/>
+                <TextBlock Grid.Column="4" Margin="12 0 0 0" Text="m = "/>
+                <TextBox Grid.Column="5"
+                         Text="{Binding MStr}"/>
+                <Button Grid.Column="6" Margin="6 0 0 0" Content="Go"
+                        Command="{Binding GoCmd}"/>
+                <TextBlock Grid.Column="7" Margin="30 0 0 0" Text="Result = "/>
+                <TextBox Grid.Column="8" IsReadOnly="True"
+                         Text="{Binding Result}"/>
+            </Grid>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

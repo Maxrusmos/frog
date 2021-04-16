@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI">
+    <DataTemplate DataType="{x:Type gui:Task1_7VM}">
+        <Grid Margin="0 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8">
+                <TextBlock.Inlines>
+                    <Run FontWeight="Bold" Text="Task7. "/>
+                    <Run Text="Left cycle shift of the a on n bits. Where len - length of the a."/>
+                </TextBlock.Inlines>
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="a="/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding A, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="len="/>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Len, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="n="/>
+            <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding N, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="6" Text="result="/>
+            <TextBox Grid.Row="1" Grid.Column="7" Text="{Binding Result, Mode=OneWay}"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI">
+    <DataTemplate DataType="{x:Type gui:Task3_SpecVM}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" FontWeight="Bold" Text="Special."/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Button Margin="0 0 6 0" Content="Generate SBox"
+                        Command="{Binding GenerateSBoxCmd}"/>
+                <Button Margin="0 0 6 0" Content="Generate InvSBox"
+                        Command="{Binding GenerateInvSBoxCmd}"/>
+                <Button Margin="0 0 6 0" Content="Generate inverse mix columns matrix"
+                        Command="{Binding GenerateInvMatrixCmd}"/>
+            </StackPanel>
+            <TextBox Grid.Row="2" Height="auto" AcceptsReturn="True" IsReadOnly="True" FontFamily="Consolas"
+                     Text="{Binding Result, Mode=OneWay}"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

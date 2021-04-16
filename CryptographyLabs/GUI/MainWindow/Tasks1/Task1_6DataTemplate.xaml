@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gui="clr-namespace:CryptographyLabs.GUI">
+    <DataTemplate DataType="{x:Type gui:Task1_6VM}">
+        <Grid Margin="0 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8">
+                <TextBlock.Inlines>
+                    <Run FontWeight="Bold" Text="Task6. "/>
+                    <Run Text="Xor of all bits of the a. Where a has length 2^p."/>
+                </TextBlock.Inlines>
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="a="/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding A, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="p="/>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding P, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="result="/>
+            <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Result, Mode=OneWay}"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
